@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Angular App</h1>
+      <hr />
+      <app-create-person
+        (personAdded)="addedPerson($event)"
+      ></app-create-person>
+      <hr />
+      <h4>Lista de oameni</h4>
+      <app-child-c
+        *ngFor="let personData of personsData"
+        [srcPerson]="personData"
+      ></app-child-c>
+      <br />
+      <hr />
+      <p>&copy; {{ nume }}</p>
+    </div>
+  </div>
+</div>
