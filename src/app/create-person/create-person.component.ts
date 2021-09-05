@@ -7,6 +7,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class CreatePersonComponent implements OnInit {
   @Output() personAdded = new EventEmitter<{ name: string; age: number }>();
+  @Output() personRemoved = new EventEmitter();
   newName = '';
   newAge = 0;
 
@@ -16,5 +17,8 @@ export class CreatePersonComponent implements OnInit {
 
   addPerson() {
     this.personAdded.emit({ name: this.newName, age: this.newAge });
+  }
+  removePerson() {
+    this.personRemoved.emit();
   }
 }

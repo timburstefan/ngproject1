@@ -22,4 +22,7 @@ export class AppComponent {
       age: personData.age,
     });
   }
+  removedPerson() {
+    this.personsData.pop();
+  }
 }
