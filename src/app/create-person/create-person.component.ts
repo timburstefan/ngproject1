@@ -6,8 +6,11 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./create-person.component.css'],
 })
 export class CreatePersonComponent implements OnInit {
-  @Output() personAdded = new EventEmitter<{ name: string; age: number }>();
-  @Output() personRemoved = new EventEmitter();
+  @Output('padded') personAdded = new EventEmitter<{
+    name: string;
+    age: number;
+  }>();
+  @Output('premoved') personRemoved = new EventEmitter();
   newName = '';
   newAge = 0;
 
