@@ -6,11 +6,6 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./child-c.component.css'],
 })
 export class ChildCComponent implements OnInit {
-  @Input('srcPerson') person = {
-    name: '',
-    age: 0,
-  };
-
   constructor() {}
 
   ngOnInit(): void {}

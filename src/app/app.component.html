@@ -9,10 +9,12 @@
       ></app-create-person>
       <hr />
       <h4>Lista de oameni</h4>
-      <app-child-c
-        *ngFor="let personData of personsData"
-        [srcPerson]="personData"
-      ></app-child-c>
+      <app-child-c *ngFor="let personData of personsData"
+        ><div class="panel-body">
+          {{ personData.name }}
+          {{ personData.age }}
+        </div></app-child-c
+      >
       <br />
       <hr />
       <p>&copy; {{ nume }}</p>

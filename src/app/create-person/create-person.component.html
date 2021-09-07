@@ -1,5 +1,14 @@
-<p><input type="text" class="form-control" [(ngModel)]="newName" /></p>
-<p><input type="number" class="form-control" [(ngModel)]="newAge" /></p>
+<!-- <p>
+  <label>Nume</label
+  ><input type="text" class="form-control" [(ngModel)]="newName" />
+</p> -->
+<p>
+  <label>Nume</label><input type="text" class="form-control" #personNameInput />
+</p>
+<p>
+  <label>Varsta</label
+  ><input type="number" class="form-control" [(ngModel)]="newAge" />
+</p>
 <button class="btn btn-primary" (click)="addPerson()">Add person</button>
 
 <button class="btn btn-primary" (click)="removePerson()">Remove person</button>

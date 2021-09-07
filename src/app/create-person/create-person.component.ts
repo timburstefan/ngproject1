@@ -1,4 +1,11 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  EventEmitter,
+  Output,
+  ViewChild,
+  ElementRef,
+} from '@angular/core';
 
 @Component({
   selector: 'app-create-person',
@@ -14,12 +21,17 @@ export class CreatePersonComponent implements OnInit {
   newName = '';
   newAge = 0;
 
+  @ViewChild('personNameInput', { static: true }) personNameInput: any;
   constructor() {}
 
   ngOnInit(): void {}
 
   addPerson() {
-    this.personAdded.emit({ name: this.newName, age: this.newAge });
+    // console.log(this.personNameInput.nativeElement.value);
+    this.personAdded.emit({
+      name: this.personNameInput.nativeElement.value,
+      age: this.newAge,
+    });
   }
   removePerson() {
     this.personRemoved.emit();
