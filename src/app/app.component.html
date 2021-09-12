@@ -10,7 +10,7 @@
       <hr />
       <h4>Lista de oameni</h4>
       <app-child-c *ngFor="let personData of personsData"
-        ><div class="panel-body">
+        ><div appHighlightPerson class="panel-body">
           {{ personData.name }}
           {{ personData.age }}
         </div></app-child-c
