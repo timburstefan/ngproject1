@@ -7,11 +7,17 @@ import { AppComponent } from './app.component';
 import { ChildCComponent } from './child-c/child-c.component';
 import { CreatePersonComponent } from './create-person/create-person.component';
 import { HighlightPersonDirective } from './highlight-person.directive';
+import { GeneralService } from './services/general.service';
 
 @NgModule({
-  declarations: [AppComponent, ChildCComponent, CreatePersonComponent, HighlightPersonDirective],
+  declarations: [
+    AppComponent,
+    ChildCComponent,
+    CreatePersonComponent,
+    HighlightPersonDirective,
+  ],
   imports: [BrowserModule, FormsModule, HttpClientModule],
-  providers: [],
+  providers: [GeneralService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

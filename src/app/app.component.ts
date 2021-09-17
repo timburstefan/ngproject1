@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { GeneralService } from './services/general.service';
 
 @Component({
   selector: 'app-root',
@@ -7,22 +8,9 @@ import { Component } from '@angular/core';
 
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  constructor(private serv: GeneralService) {}
   nume: string = 'By Stefan';
-  personsData = [
-    {
-      name: 'Stefan',
-      age: 23,
-    },
-  ];
-
-  addedPerson(personData: { name: string; age: number }) {
-    this.personsData.push({
-      name: personData.name,
-      age: personData.age,
-    });
-  }
-  removedPerson() {
-    this.personsData.pop();
-  }
+  persons = this.serv.persons;
+  ngOnInit(): void {}
 }

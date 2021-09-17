@@ -5,6 +5,7 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
+import { GeneralService } from '../services/general.service';
 
 @Component({
   selector: 'app-create-person',
@@ -12,22 +13,13 @@ import {
   styleUrls: ['./create-person.component.css'],
 })
 export class CreatePersonComponent {
-  @Output('padded') personAdded = new EventEmitter<{
-    name: string;
-    age: number;
-  }>();
-  @Output('premoved') personRemoved = new EventEmitter();
-  @ViewChild('personNameInput', { static: true }) inputName: any;
-  @ViewChild('personAgeInput', { static: true }) inputAge: any;
-
+  constructor(private serv: GeneralService) {}
+  name = '';
+  age = 0;
   addPerson() {
-    // console.log(this.personNameInput.nativeElement.value);
-    this.personAdded.emit({
-      name: this.inputName.nativeElement.value,
-      age: this.inputAge.nativeElement.value,
-    });
+    this.serv.addPerson(this.name, this.age);
   }
   removePerson() {
-    this.personRemoved.emit();
+    this.serv.persons.pop();
   }
 }

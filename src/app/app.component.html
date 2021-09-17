@@ -3,18 +3,12 @@
     <div class="col-xs-12">
       <h1>Angular App</h1>
       <hr />
-      <app-create-person
-        (padded)="addedPerson($event)"
-        (premoved)="removedPerson()"
-      ></app-create-person>
+      <app-create-person></app-create-person>
       <hr />
       <h4>Lista de oameni</h4>
-      <app-child-c *ngFor="let personData of personsData"
-        ><div appHighlightPerson class="panel-body">
-          {{ personData.name }}
-          {{ personData.age }}
-        </div></app-child-c
-      >
+      <div *ngFor="let person of persons">
+        <app-child-c [person]="person"></app-child-c>
+      </div>
       <br />
       <hr />
       <p>&copy; {{ nume }}</p>

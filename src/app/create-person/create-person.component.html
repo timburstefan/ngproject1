@@ -1,9 +1,10 @@
 <p>
-  <label>Nume</label><input type="text" class="form-control" #personNameInput />
+  <label>Nume</label
+  ><input type="text" class="form-control" [(ngModel)]="name" />
 </p>
 <p>
   <label>Varsta</label
-  ><input type="number" class="form-control" #personAgeInput />
+  ><input type="number" class="form-control" [(ngModel)]="age" />
 </p>
 <button class="btn btn-primary" (click)="addPerson()">Add person</button>
 

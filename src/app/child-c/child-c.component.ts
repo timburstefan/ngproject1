@@ -7,6 +7,10 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ChildCComponent implements OnInit {
   constructor() {}
+  @Input() person = {
+    name: '',
+    age: 0,
+  };
 
   ngOnInit(): void {}
 }
